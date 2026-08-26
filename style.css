@@ -13,7 +13,6 @@ body {
     justify-content: space-between;
 }
 
-/* CABEÇALHO MARROM */
 header {
     background-color: #6d2813;
     color: #ffffff;
@@ -36,7 +35,6 @@ header {
     font-family: Arial, sans-serif;
 }
 
-/* ÁREA CENTRAL CENTRALIZADA */
 main {
     flex: 1;
     display: flex;
@@ -55,7 +53,6 @@ main {
     text-align: center;
 }
 
-/* CONTAINER DOS FLASHCARDS CENTRALIZADO */
 .cartoes-container {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +64,6 @@ main {
     margin: 0 auto;
 }
 
-/* ESTRUTURA DO CARTÃO COM EFEITO 3D DE GIRO */
 .cartao {
     width: 180px;
     height: 290px;
@@ -84,12 +80,10 @@ main {
     transform-style: preserve-3d;
 }
 
-/* GIRO DO CARTÃO AO PASSAR O MOUSE */
 .cartao:hover .cartao-conteudo {
     transform: rotateY(180deg);
 }
 
-/* FACES DO CARTÃO */
 .cartao-face {
     position: absolute;
     top: 0;
@@ -106,7 +100,6 @@ main {
     flex-direction: column;
 }
 
-/* FRENTE E VERSO */
 .cartao-frente {
     z-index: 2;
 }
@@ -115,7 +108,6 @@ main {
     transform: rotateY(180deg);
 }
 
-/* ÁREA DA IMAGEM */
 .area-imagem {
     width: 100%;
     height: 220px;
@@ -130,7 +122,6 @@ main {
     display: block;
 }
 
-/* ÁREA DO TEXTO */
 .cartao-texto {
     flex: 1;
     padding: 8px;
@@ -152,7 +143,6 @@ main {
     font-weight: bold;
 }
 
-/* RODAPÉ MARROM */
 footer {
     background-color: #6d2813;
     color: #ffffff;
