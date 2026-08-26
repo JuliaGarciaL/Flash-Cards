@@ -36,11 +36,14 @@ header {
     font-family: Arial, sans-serif;
 }
 
-/* ÁREA CENTRAL */
+/* ÁREA CENTRAL CENTRALIZADA */
 main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 25px 15px;
-    text-align: center;
+    width: 100%;
 }
 
 .titulo-principal {
@@ -49,14 +52,17 @@ main {
     font-weight: bold;
     color: #000000;
     margin-bottom: 25px;
+    text-align: center;
 }
 
-/* CONTAINER DOS FLASHCARDS ALINHADOS */
+/* CONTAINER DOS FLASHCARDS CENTRALIZADO */
 .cartoes-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -64,16 +70,17 @@ main {
 /* ESTRUTURA DO CARTÃO COM EFEITO 3D DE GIRO */
 .cartao {
     width: 180px;
-    height: 280px;
+    height: 290px;
     perspective: 1000px;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .cartao-conteudo {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: transform 0.6s;
+    transition: transform 0.6s ease;
     transform-style: preserve-3d;
 }
 
@@ -82,13 +89,13 @@ main {
     transform: rotateY(180deg);
 }
 
-/* FACES DO CARTÃO (FRENTE E VERSO) */
+/* FACES DO CARTÃO */
 .cartao-face {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     background-color: #ffffff;
@@ -99,21 +106,21 @@ main {
     flex-direction: column;
 }
 
-/* FRENTE DO CARTÃO */
+/* FRENTE E VERSO */
 .cartao-frente {
     z-index: 2;
 }
 
-/* VERSO DO CARTÃO (INVERTIDO EM 180 GRUAS) */
 .cartao-verso {
     transform: rotateY(180deg);
 }
 
-/* ESPAÇO DA IMAGEM EM AMBAS AS FACES */
+/* ÁREA DA IMAGEM */
 .area-imagem {
     width: 100%;
     height: 220px;
     background-color: #cccccc;
+    flex-shrink: 0;
 }
 
 .area-imagem img {
@@ -123,11 +130,11 @@ main {
     display: block;
 }
 
-/* ÁREA DO TEXTO EMBAIXO DA FOTO */
+/* ÁREA DO TEXTO */
 .cartao-texto {
+    flex: 1;
     padding: 8px;
     background-color: #ffffff;
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
