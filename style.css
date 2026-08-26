@@ -1,92 +1,157 @@
-/* Configurações Globais e Reset Simples */
+/* RESET E ESTILOS GERAIS */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-fundo: #041832;
+    --bg-header: #020d1c;
+    --bg-cartao-frente: #142b47;
+    --bg-cartao-verso: #0a1f38;
+    --cor-primaria: #22D4FD;
+    --cor-texto-frente: #FFFFFF;
+    --cor-texto-verso: #E1E8F0;
+    --borda-cartao: #22D4FD;
 }
 
 body {
-  background-color: #0d1117;
-  color: #c9d1d9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+    background-color: var(--bg-fundo);
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: var(--cor-texto-frente);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.container {
-  text-align: center;
-  max-width: 800px;
-  width: 100%;
+/* CABEÇALHO */
+header {
+    background-color: var(--bg-header);
+    border-bottom: 2px solid var(--cor-primaria);
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
-h1 {
-  margin-bottom: 2rem;
-  color: #58a6ff;
+.header-container h1 {
+    font-size: 2.2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Layout em Grid Responsivo */
-.grid-flashcards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+.header-container p {
+    font-size: 1rem;
+    opacity: 0.85;
+    color: #a2c4e0;
 }
 
-/* Estrutura Base do Cartão (Efeito 3D) */
+/* ÁREA PRINCIPAL E GRID */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1.5rem;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* ESTRUTURA DO CARTÃO EM 3D */
 .cartao {
-  background-color: transparent;
-  height: 200px;
-  perspective: 1000px; /* Cria o efeito de profundidade */
-  cursor: pointer;
+    background-color: transparent;
+    height: 230px;
+    perspective: 1000px;
+    cursor: pointer;
 }
 
 .cartao__conteudo {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s ease;
-  transform-style: preserve-3d; /* Mantém os elementos 3D */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
 }
 
-/* Animação ao passar o mouse */
+/* GIRO DO CARTÃO AO PASSAR O MOUSE */
 .cartao:hover .cartao__conteudo {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-/* Estilização das Faces (Frente e Verso) */
+/* FACES DO CARTÃO */
 .cartao__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* Esconde o lado inverso */
-  border-radius: 12px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* FRENTE DO CARTÃO */
 .cartao__face--frente {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  color: #f0f6fc;
+    background-color: var(--bg-cartao-frente);
+    border-top: 4px solid var(--cor-primaria);
+    border-left: 1px solid rgba(34, 212, 253, 0.2);
+    border-right: 1px solid rgba(34, 212, 253, 0.2);
+    border-bottom: 1px solid rgba(34, 212, 253, 0.2);
 }
 
+.cartao__face--frente h3 {
+    color: var(--cor-primaria);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+}
+
+.cartao__conteudo__pergunta p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--cor-texto-frente);
+}
+
+/* VERSO DO CARTÃO */
 .cartao__face--verso {
-  background-color: #1f6feb;
-  color: #ffffff;
-  transform: rotateY(180deg); /* Já começa virado no eixos 3D */
+    background-color: var(--bg-cartao-verso);
+    border: 2px solid var(--cor-primaria);
+    transform: rotateY(180deg);
 }
 
-.categoria {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
-  opacity: 0.8;
+.cartao__face--verso h3 {
+    color: #00FF88; /* Verde Neon para destaque da resposta */
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+}
+
+.cartao__conteudo__resposta p {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: var(--cor-texto-verso);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--bg-header);
+    border-top: 1px solid rgba(34, 212, 253, 0.2);
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.85rem;
+    color: #83a5c5;
 }

@@ -1,46 +1,210 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcards de Estudo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards de Óptica - Alura</title>
+
+    <!-- Fonte oficial utilizada nos projetos da Alura -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>Flashcards de Estudo</h1>
 
-    <section class="grid-flashcards">
-      
-      <!-- Flashcard 1 -->
-      <article class="cartao">
-        <div class="cartao__conteudo">
-          <div class="cartao__face cartao__face--frente">
-            <span class="categoria">Programação</span>
-            <h3>O que é HTML?</h3>
-          </div>
-          <div class="cartao__face cartao__face--verso">
-            <span class="categoria">Resposta</span>
-            <p>HTML (HyperText Markup Language) é a linguagem de marcação usada para estruturar conteúdos na web.</p>
-          </div>
+    <header>
+        <div class="header-container">
+            <h1>Flashcards de Óptica</h1>
+            <p>Passe o mouse sobre os cartões para revelar as respostas</p>
         </div>
-      </article>
+    </header>
 
-      <!-- Flashcard 2 -->
-      <article class="cartao">
-        <div class="cartao__conteudo">
-          <div class="cartao__face cartao__face--frente">
-            <span class="categoria">CSS</span>
-            <h3>O que é o Flexbox?</h3>
-          </div>
-          <div class="cartao__face cartao__face--verso">
-            <span class="categoria">Resposta</span>
-            <p>É um modelo de layout 1D no CSS projetado para alinhar e distribuir espaço entre itens em um contêiner.</p>
-          </div>
-        </div>
-      </article>
+    <main>
+        <section id="container">
 
-    </section>
-  </main>
+            <!-- TÓPICO 1: PROPRIEDADES DA LUZ -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Propriedades da Luz</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>Qual é a velocidade da luz no vácuo e qual é a sua natureza física?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>A luz viaja a aprox. 300.000 km/s (3 × 10⁸ m/s) no vácuo. Ela possui natureza dual (onda-partícula), comportando-se como onda eletromagnética e feixe de fótons.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Propriedades da Luz</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>O que estabelece o Princípio da Propagação Retilínea da Luz?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>Em meios homogêneos e transparentes, a luz se propaga em linha reta. Esse princípio explica a formação de sombras, penumbras e eclipses.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TÓPICO 2: REFLEXÃO E ESPELHOS -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Reflexão e Espelhos</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>Quais são as duas Leis da Reflexão da Luz?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>1ª) O raio incidente, a reta normal e o raio refletido estão no mesmo plano. 2ª) O ângulo de incidência é sempre igual ao ângulo de reflexão (i = r).</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Reflexão e Espelhos</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>Qual a principal diferença entre espelhos côncavos e convexos?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>Espelhos côncavos convergem a luz (imagens reais ou virtuais ampliadas). Espelhos convexos divergem a luz e formam imagens virtuais, diretas e reduzidas.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TÓPICO 3: FENÔMENOS DA LUZ -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Fenômenos da Luz</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>O que é a Refração Luminosa e por que ela ocorre?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>É a mudança na velocidade e direção da luz ao passar de um meio transparente para outro com índice de refração diferente (ex: do ar para a água).</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Fenômenos da Luz</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>Como ocorre o fenômeno da Dispersão da Luz?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>Ocorre quando a luz branca (policromática) se separa em suas cores componentes (monocromáticas) ao atravessar um meio dispersivo, como um prisma.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TÓPICO 4: LENTES -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Lentes Ópticas</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>Qual a diferença entre Lentes Convergentes e Divergentes?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>Lentes convergentes (bordas finas) juntam os raios de luz num foco real. Lentes divergentes (bordas espessas) espalham os raios de luz.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Lentes Ópticas</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>O que é a Vergência ("grau") de uma lente e como é calculada?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>É a capacidade de uma lente desviar a luz. Calculada pelo inverso da distância focal (V = 1/f) e medida em Dioptrias (di ou graus).</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TÓPICO 5: ÓPTICA DO CORPO HUMANO -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Óptica do Corpo Humano</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>O que é a Miopia e qual tipo de lente é usada para corrigi-la?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>Dificuldade para enxergar de longe pois a imagem se forma antes da retina (olho mais longo). É corrigida com lentes divergentes.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <div class="cartao__face cartao__face--frente">
+                        <h3>Óptica do Corpo Humano</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            <p>O que é a Hipermetropia e como ela é corrigida?</p>
+                        </div>
+                    </div>
+                    <div class="cartao__face cartao__face--verso">
+                        <h3>Resposta</h3>
+                        <div class="cartao__conteudo__resposta">
+                            <p>Dificuldade para enxergar de perto pois a imagem se forma atrás da retina (olho mais curto). É corrigida com lentes convergentes.</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto desenvolvido no modelo Alura — Estudo de Física e Óptica</p>
+    </footer>
+
 </body>
 </html>
