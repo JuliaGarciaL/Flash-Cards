@@ -4,7 +4,144 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confere Aí - Óptica</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* RESET E CONFIGURAÇÕES GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eaeaea; /* Fundo cinza claro idêntico ao Alura */
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* CABEÇALHO MARROM */
+        header {
+            background-color: #6d2813; /* Tom exato de marrom da imagem */
+            color: #ffffff;
+            padding: 10px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ÁREA CENTRAL */
+        main {
+            flex: 1;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        .titulo-principal {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 25px;
+        }
+
+        /* CONTAINER DOS FLASHCARDS ALINHADOS */
+        .cartoes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ESTRUTURA DO CARTÃO */
+        .cartao {
+            background-color: #ffffff;
+            width: 180px;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+        }
+
+        .cartao:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ESPAÇO DA IMAGEM (OCUPA A MAIOR PARTE DO CARTÃO) */
+        .area-imagem {
+            width: 100%;
+            height: 220px; /* Espaço alto reservado para a foto */
+            background-color: #cccccc; /* Fundo cinza enquanto estiver sem imagem */
+        }
+
+        .area-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ÁREA DO TEXTO EMBAIXO DA FOTO */
+        .cartao-texto {
+            padding: 8px;
+            background-color: #ffffff;
+            min-height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .cartao-texto p {
+            font-size: 12px;
+            color: #000000;
+            line-height: 1.2;
+        }
+
+        /* REVELA A RESPOSTA AO PASSAR O MOUSE */
+        .cartao .resposta {
+            display: none;
+            font-weight: bold;
+        }
+
+        .cartao:hover .pergunta {
+            display: none;
+        }
+
+        .cartao:hover .resposta {
+            display: block;
+        }
+
+        /* RODAPÉ MARROM */
+        footer {
+            background-color: #6d2813;
+            color: #ffffff;
+            padding: 10px 25px;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,7 +153,7 @@
     <main>
         <h2 class="titulo-principal">Descubra a verdade passando o mouse</h2>
 
-        <section class="container-cartoes">
+        <section class="cartoes-container">
 
             <!-- 1. PROPRIEDADES DA LUZ -->
             <div class="cartao">
@@ -24,8 +161,8 @@
                     <img src="imagem1.jpg" alt="Propriedades da luz">
                 </div>
                 <div class="cartao-texto">
-                    <p class="pergunta">Qual é a velocidade da luz no vácuo?</p>
-                    <p class="resposta">A luz viaja a cerca de 300.000 km/s no vácuo.</p>
+                    <p class="pergunta">A luz viaja a 300.000 km/s no vácuo?</p>
+                    <p class="resposta">Verdade! É a velocidade máxima no universo.</p>
                 </div>
             </div>
 
@@ -35,8 +172,8 @@
                     <img src="imagem2.jpg" alt="Reflexão e espelhos">
                 </div>
                 <div class="cartao-texto">
-                    <p class="pergunta">Qual a função do espelho plano?</p>
-                    <p class="resposta">Forma imagens virtuais, diretas e de mesmo tamanho.</p>
+                    <p class="pergunta">Espelhos planos invertem a imagem de cabeça para baixo?</p>
+                    <p class="resposta">Mito! Invertem apenas esquerda e direita.</p>
                 </div>
             </div>
 
@@ -46,19 +183,19 @@
                     <img src="imagem3.jpg" alt="Fenômenos da luz">
                 </div>
                 <div class="cartao-texto">
-                    <p class="pergunta">O que é refração da luz?</p>
-                    <p class="resposta">É o desvio da luz ao mudar de meio de propagação.</p>
+                    <p class="pergunta">A refração entorta a imagem do lápis na água?</p>
+                    <p class="resposta">Verdade! Ocorre pela mudança na velocidade da luz.</p>
                 </div>
             </div>
 
             <!-- 4. LENTES -->
             <div class="cartao">
                 <div class="area-imagem">
-                    <img src="imagem4.jpg" alt="Lentes ópticas">
+                    <img src="imagem4.jpg" alt="Lentes">
                 </div>
                 <div class="cartao-texto">
-                    <p class="pergunta">O que faz uma lente convergente?</p>
-                    <p class="resposta">Junta os raios de luz em um único ponto focal.</p>
+                    <p class="pergunta">Lupas de aumento usam lentes divergentes?</p>
+                    <p class="resposta">Mito! Lupas usam lentes convergentes.</p>
                 </div>
             </div>
 
@@ -68,8 +205,8 @@
                     <img src="imagem5.jpg" alt="Óptica do corpo humano">
                 </div>
                 <div class="cartao-texto">
-                    <p class="pergunta">Como se corrige a miopia?</p>
-                    <p class="resposta">Utilizando lentes divergentes para afastar o foco.</p>
+                    <p class="pergunta">A miopia dificulta enxergar objetos distantes?</p>
+                    <p class="resposta">Verdade! A imagem se forma antes da retina.</p>
                 </div>
             </div>
 
